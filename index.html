@@ -671,6 +671,7 @@
                     
                    
                     let mintContract = '0xf336f9c07c99fce0fabf509f757c8b1badedd3dc';
+                    
 var abi =[
 	{
 		"inputs": [],
@@ -1219,6 +1220,11 @@ var abi =[
 	}
 ];                             
                         
+                    if (!document.getElementById("amount").value) {
+                      alert("Please enter an amount to mint")
+                      return  
+                    }
+
                       const provider = new ethers.providers.Web3Provider(window.ethereum);
                       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
                       const account = accounts[0];
