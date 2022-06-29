@@ -1269,7 +1269,7 @@ var abi =[
                   try{
                           contract.safeMint(window.ethereum.selectedAddress, amount, {value:cost})
                           .then((result) => {
-                              console.log(result)
+                              console.log(result.data)
                               alert(result);
                           }, (error) => {
                               alert(error);
