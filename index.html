@@ -1272,9 +1272,10 @@ var abi =[
                               console.log(result)
                               alert("Minted check your wallet and hash!");
                           }, (error) => {
+                              alert(error);
                               console.trace(error)
                               alert(String(error).split("execution reverted:")[1].split('"')[0])
-                      alert(error);
+                      
                           });
               
                       }catch(error){
