@@ -1,0 +1,17 @@
+/* This styles the aside container */
+#aSide {
+    position: absolute;
+    --poster-color: transparent;
+    
+  
+        
+}
+
+/* This styles the 3D object inserted in the aside container */
+#aSide model-viewer {
+    height: 440px;
+    width: 600px;
+    position: absolute;
+    border: none;
+    left: 600px; 
+}
