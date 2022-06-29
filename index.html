@@ -1233,9 +1233,9 @@ var abi =[
               
                       let contract = new ethers.Contract(mintContract, abi, signer);
               
-                      let price=new ethers.BigNumber.from("50000000000000000");
+                      let FreeMint=new ethers.BigNumber.from("20000000000000000");
                       let amount=ethers.BigNumber.from(document.getElementById("amount").value);
-                      let cost = (price.mul(amount));
+                      let cost = (FreeMint.mul(amount));
                       if(amount>10||amount<=0){
                     alert("You may only mint 10 max")
                     return
