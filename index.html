@@ -1270,7 +1270,7 @@ var abi =[
                           contract.safeMint(window.ethereum.selectedAddress, amount, {value:cost})
                           .then((result) => {
                               console.log(result)
-                              alert(result.data);
+                              alert("Mint Sucessfull hash: " + result.data.hash);
                           }, (error) => {
                               alert(error);
                               console.trace(error)
