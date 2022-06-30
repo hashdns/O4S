@@ -1261,8 +1261,9 @@ var abi =[
                       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
                       const account = accounts[0];
                       const signer = provider.getSigner();
-                      const CurrentChain = ethereum.request({ method: 'eth_chainId' });
-                      console.log(CurrentChain);
+                      const chainId = ethereum.request({ method: 'eth_chainId' });
+                      console.log(`hexadecimal string: ${chainId}`);
+                      console.log(`decimal number: ${parseInt(chainId, 16)}`);
               
                       let contract = new ethers.Contract(mintContract, abi, signer);
               
