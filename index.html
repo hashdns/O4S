@@ -1262,7 +1262,7 @@ var abi =[
                       const account = accounts[0];
                       const signer = provider.getSigner();
                       const currentChainId = await web3.eth.net.getId()
-
+                      console.log(currentChainId);
               
                       let contract = new ethers.Contract(mintContract, abi, signer);
               
@@ -1277,7 +1277,6 @@ var abi =[
                           contract.safeMint(window.ethereum.selectedAddress, amount, {value:cost})
                           .then((result) => {
                               console.log(result)
-                              console.log(currentChainId);
                               alert("Mint Sucessfull hash: " + result.hash);
                           }, (error) => {
                               alert("insufficient funds for intrinsic transaction");
