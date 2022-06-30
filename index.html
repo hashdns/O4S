@@ -1258,6 +1258,9 @@ var abi =[
 
                       
                       const provider = new ethers.providers.Web3Provider(window.ethereum);
+                      if (!provider) {
+                      alert("Metamask is not installed, please install!");
+                    }
                       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
                       const account = accounts[0];
                       const signer = provider.getSigner();
@@ -1282,9 +1285,10 @@ var abi =[
                               console.log(result)
                               alert("Mint Sucessfull hash: " + result.hash);
                           }, (error) => {
-                              alert(error);
+                              
                               console.trace(error)
                               alert(String(error).split("execution reverted:")[1].split('"')[0])
+                              alert(error);
                               
                           });
               
