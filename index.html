@@ -1256,7 +1256,7 @@ var abi =[
                       return  
                     }
 
-                      const web3 = new Web3(window.ethereum)
+                      
                       const provider = new ethers.providers.Web3Provider(window.ethereum);
                       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
                       const account = accounts[0];
@@ -1279,7 +1279,7 @@ var abi =[
                               console.log(result)
                               alert("Mint Sucessfull hash: " + result.hash);
                           }, (error) => {
-                              alert("insufficient funds for intrinsic transaction");
+                              alert(error);
                               console.trace(error)
                               alert(String(error).split("execution reverted:")[1].split('"')[0])
                               
