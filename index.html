@@ -668,6 +668,9 @@
               <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
 
               <script>      
+
+
+
              
                   document.getElementById("mint").addEventListener("click", async()=>{
                     
@@ -1257,7 +1260,8 @@ var abi =[
                       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
                       const account = accounts[0];
                       const signer = provider.getSigner();
-                  
+                      const currentChainId = await web3.eth.net.getId();
+
               
                       let contract = new ethers.Contract(mintContract, abi, signer);
               
@@ -1272,6 +1276,7 @@ var abi =[
                           contract.safeMint(window.ethereum.selectedAddress, amount, {value:cost})
                           .then((result) => {
                               console.log(result)
+                              console.log(currentChainId);
                               alert("Mint Sucessfull hash: " + result.hash);
                           }, (error) => {
                               alert("insufficient funds for intrinsic transaction");
