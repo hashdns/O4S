@@ -1267,7 +1267,7 @@ var abi =[
                       const signer = provider.getSigner();
                       const chainId = await ethereum.request({ method: 'eth_chainId' });
                       console.log(chainId);
-                      const ethchainId = '0x61';
+                      const ethchainId = '0x1';
                       if (chainId === ethchainId) {
                       console.log("Bravo!, you are on the correct network");
                     } else {
@@ -1292,14 +1292,14 @@ var abi =[
                           }, (error) => {
                               
                               console.trace(error)
-                              alert(String(error).split(" ")[0]);
+                              alert(String(error).split("execution reverted:")[0]);
                               
                               
                           });
               
                       }catch(error){
                           console.trace(error)
-                          alert(String(error).split("!")[0]);
+                          alert(String(error).split("(")[0]);
                          
                           
                       }
