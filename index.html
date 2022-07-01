@@ -1287,7 +1287,7 @@ var abi =[
                           }, (error) => {
                               
                               console.trace(error)
-                              alert(String(error).split("execution reverted:")[0].split('"')[0]);
+                              alert(String(error).split("execution reverted:")[0]);
                               
                               
                           });
@@ -1295,7 +1295,7 @@ var abi =[
                       }catch(error){
                           alert(String(error).split("(")[0])
                           console.trace(error)
-                          alert(error);
+                          
                       }
                   });
               
