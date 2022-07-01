@@ -1272,13 +1272,13 @@ var abi =[
                       const signer = provider.getSigner();
                       const chainId = await ethereum.request({ method: 'eth_chainId' });
                       console.log(chainId);
-                      const ethchainId = '1';
+                      const ethchainId = '0x1';
                       if (chainId === ethchainId) {
                       console.log("Bravo!, you are on the correct network");
                     } else {
                       await _provider.request({
                           method: 'wallet_switchEthereumChain',
-                          params: [{ chainId: ethchainId }],
+                          params: [{ chainId: "1" }],
                         });
                         console.log("You have succefully switched to ETH network")
                     }
