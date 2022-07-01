@@ -1285,10 +1285,10 @@ var abi =[
                               console.log(result)
                               alert("Mint Sucessfull hash: " + result.hash);
                           }, (error) => {
-                              alert(error)
+                              
                               console.trace(error)
                               alert(String(error).split("execution reverted:")[1].split('"')[0])
-                             
+                              alert(error);
                               
                           });
               
