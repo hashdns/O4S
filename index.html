@@ -1252,8 +1252,9 @@ var abi =[
 ];                            
                         
                        
-
-                    
+                    if (!provider) {
+                      console.log('Please install MetaMask!'); 
+                    }
                     if (!document.getElementById("amount").value) {
                       alert("Please enter an amount to mint")
                       return  
