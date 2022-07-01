@@ -1268,6 +1268,11 @@ var abi =[
                       const chainId = await ethereum.request({ method: 'eth_chainId' });
                       console.log(chainId);
                       const ethchainId = '0x61';
+                      if (chainId === ethchainId) {
+                      console.log("Bravo!, you are on the correct network");
+                    } else {
+                      console.log("oulalal, switch to the correct network")
+                    }
                       
                             
                       let contract = new ethers.Contract(mintContract, abi, signer);
