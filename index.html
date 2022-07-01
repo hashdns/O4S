@@ -1276,7 +1276,11 @@ var abi =[
                       if (chainId === ethchainId) {
                       console.log("Bravo!, you are on the correct network");
                     } else {
-                      console.log("oulalal, switch to the correct network")
+                      await provider.request({
+                          method: 'wallet_switchEthereumChain',
+                          params: [{ chainId: ethchainId }],
+                        });
+                        console.log("You have succefully switched to ETH network")
                     }
                       
                             
