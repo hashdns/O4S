@@ -1263,14 +1263,12 @@ var abi =[
                       const provider = new ethers.providers.Web3Provider(window.ethereum);
                       
                       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-                      if (!provider) {
-                      alert("Metamask is not installed, please install!")
-                      
-                    } 
+                      const account = accounts[0];
                       const signer = provider.getSigner();
-                      const chainId =  ethereum.request({ method: 'eth_chainId' });
+                      const chainId = await ethereum.request({ method: 'eth_chainId' });
                       console.log(chainId);
                       const ethchainId = '0x61';
+                      chainId(ethchainId);
                             
                       let contract = new ethers.Contract(mintContract, abi, signer);
               
