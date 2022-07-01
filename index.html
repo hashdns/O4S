@@ -1258,8 +1258,8 @@ var abi =[
                       return  
                     }
 
-                    const providerck = window.ethereum;
-                    if (!providerck) {
+                    const _provider = window.ethereum;
+                    if (!_provider) {
                       alert("Metamask is not installed, please install!");
                     }  
 
@@ -1276,7 +1276,7 @@ var abi =[
                       if (chainId === ethchainId) {
                       console.log("Bravo!, you are on the correct network");
                     } else {
-                      const _switchchain = await provider.request({
+                      await _provider.request({
                           method: 'wallet_switchEthereumChain',
                           params: [{ chainId: ethchainId }],
                         });
