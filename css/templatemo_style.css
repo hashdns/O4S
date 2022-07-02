@@ -143,25 +143,6 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     color: #333333;
 }
 
-.templatemo-service {
-    margin-bottom: 100px;
-    margin-top: 100px;
-}
-
-.templatemo-service-item {
-    font-family:  'Open Sans', sans-serif;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-
-.templatemo-service-item p {
-    font-weight: lighter; 
-    text-align: justify; 
-    margin-top: 25px;
-    font-size: 14px;
-    color: #929292;
-}
 
 .subheader {
     font-family: 'Open Sans', sans-serif;
@@ -236,12 +217,6 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     margin-bottom: 0px;
 }
 
-.templatemo-service-item-header {
-    margin-left: -10px; 
-    padding: 16px 20px 20px; 
-    font-weight: bold;
-    display: inline-block;
-}
 
 .templatemo-header-orange {
     background-color:#0a165c;
@@ -256,13 +231,25 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     width: 35%; 
     float: left;
 }
+.portfolio_hr {
+    border: 1px solid #fff; 
+    width: 35%; 
+    float: left;
+}
 
 .team_hr_left {
     margin-right: 30px;
     margin-left: 15px; 
 }
+.portfolio_hr_left {
+    margin-right: 30px;
+    margin-left: 15px; 
+}
 
 .team_hr_right {
+    margin-left: 30px;
+}
+.portfolio_hr_right {
     margin-left: 30px;
 }
 
@@ -271,6 +258,13 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 }
 
 .templatemo-team {
+    background: url('../images/background.png') ; 
+    font-family:  'Open Sans', sans-serif;
+    min-height:590px;
+    color:#ffffff;
+
+}
+.templatemo-portfolio {
     background: url('../images/background.png') ; 
     font-family:  'Open Sans', sans-serif;
     min-height:590px;
@@ -317,6 +311,9 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     margin-top:10px;
 }
 
+.portfolio-inner {
+    margin-top:10px;
+}
 .team-inner-header {
     font-family: 'Open Sans', sans-serif;
     font-weight:600;
@@ -334,6 +331,9 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 }
 
 .row_team li {
+    list-style: none;
+}
+.row_portfolio li {
     list-style: none;
 }
 
@@ -397,6 +397,11 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 }
 
 .team_box  div {
+    text-align: center; 
+    padding-top: 100px;
+}
+
+.portfolio_box  div {
     text-align: center; 
     padding-top: 100px;
 }
@@ -601,12 +606,20 @@ ul.templatemo-project-gallery  li  a img:hover {
         height:220px;
         width:220px;
     }
+    .portfolio_box,  .portfolio_box_over {
+        height:220px;
+        width:220px;
+    }
 	
 }
 
 
 @media (max-width:991px) {
     .team-inner {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .portfolio-inner {
         margin-top: 20px;
         margin-bottom: 20px;
     }
@@ -674,6 +687,9 @@ ul.templatemo-project-gallery  li  a img:hover {
 
 @media (min-width:991px) and (max-width: 1200px) {
 	 .team_hr {
+		width: 37%; 
+	}
+    .portfolio_hr {
 		width: 37%; 
 	}
 }

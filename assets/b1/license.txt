@@ -1,0 +1,11 @@
+Model Information:
+* title:	Prancha de Surf/ surfboard
+* source:	https://sketchfab.com/3d-models/prancha-de-surf-surfboard-bafbc865dc8642b1bacc484dd9a5f1fc
+* author:	Leandro Cruz (https://sketchfab.com/leandro)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Prancha de Surf/ surfboard" (https://sketchfab.com/3d-models/prancha-de-surf-surfboard-bafbc865dc8642b1bacc484dd9a5f1fc) by Leandro Cruz (https://sketchfab.com/leandro) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
