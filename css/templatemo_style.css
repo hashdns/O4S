@@ -228,29 +228,29 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 
 .team_hr {
     border: 1px solid #fff; 
-    width: 35%; 
+    width: 40%; 
     float: left;
 }
 .portfolio_hr {
     border: 1px solid #fff; 
-    width: 35%; 
+    width: 40%; 
     float: left;
 }
 
 .team_hr_left {
     margin-right: 30px;
-    margin-left: 15px; 
+    margin-left: 30px; 
 }
 .portfolio_hr_left {
     margin-right: 30px;
-    margin-left: 15px; 
+    margin-left: 30px; 
 }
 
 .team_hr_right {
-    margin-left: 30px;
+    margin-left: 15px;
 }
 .portfolio_hr_right {
-    margin-left: 30px;
+    margin-left: 15px;
 }
 
 .hr_gray {
@@ -565,9 +565,9 @@ ul.templatemo-project-gallery  li  a img:hover {
     border-radius: 0;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
-    box-shadow: #0a165c;
+    box-shadow: #bcbecc;
     font-style: italic;
-    background-color: #0a165c;
+    background-color: #bfc4df;
     text-transform: uppercase;
     font-style: bold;
     width: 50px;
@@ -575,14 +575,7 @@ ul.templatemo-project-gallery  li  a img:hover {
     font-size: 30px;
 }
 
-.btn_loadmore {
-	margin-top:30px; 
-	margin-bottom:80px;
-}
 
-.blog_box {
-	margin-left: -12px;
-}
 
 @media (min-width:991px) and (max-width:1200px) {
     .templatemo-project-box, .project-overlay {
