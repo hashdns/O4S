@@ -246,6 +246,16 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     margin-left: 30px; 
 }
 
+
+.partners_hr_left {
+    margin-right: 15px;
+    margin-left: 15px; 
+}
+.partners_hr_right {
+    margin-right: 15px;
+    margin-left: 15px; 
+}
+
 .team_hr_right {
     margin-left: 30px;
 }
