@@ -464,7 +464,14 @@
                       alt="partner 3"
                   /></a>
                 </li>
-    
+                <li class="col-sm-2 col-md-2 templatemo-partner-item">
+                  <a 
+                    ><img
+                      src="images/partner4.jpg"
+                      class="img-responsive"
+                      alt="partner 4"
+                  /></a>
+                </li>
                 <li class="col-sm-2 col-md-2 templatemo-partner-item">
                   <a 
                     ><img
@@ -489,6 +496,700 @@
     </div>
 
 
+	<div id="templatemo-partners" class="templatemo-partners">
+		<div class="container">
+		  <div class="row">
+			<div class="templatemo-line-header">
+			  <div class="text-center">
+				<hr class="partners_hr partners_hr_left hr_gray" />
+				<span class="txt_darkgrey">TECHNOLOGIES/PARTNERS</span>
+				<hr class="partners_hr partners_hr_right hr_gray" />
+			  </div>
+			</div>
+			<div class="clearfix"></div>
+  
+			<input type="number" class="form-control_" id="amount" placeholder ="" >
+			<div>
+			  <p>Max mint: 10 per wallet<br>
+			  For more information, visit <a href="">out4surf.io</a></p>
+			</div>
+
+			<div class="height30"></div>
+			
+			<a class="btn btn-lg btn-orange" role="button" id="mint">MINT</a>
+
+
+		<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+
+<script>
+
+
+
+
+	document.getElementById("mint").addEventListener("click", async () => {
+
+
+		let mintContract = '0xbd6f8f4f553f07d9fcd0592412675c55d2695510';
+
+		var abi = [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_maxSupply",
+						"type": "uint256"
+					}
+				],
+				"name": "maxSupply",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_mintfee",
+						"type": "uint256"
+					}
+				],
+				"name": "mintFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "safeMint",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_newBaseURI",
+						"type": "string"
+					}
+				],
+				"name": "setBaseURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "baseExtension",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_SUPPLY",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "maxMintAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mintfee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenOfOwnerByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "uri",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		];
+
+
+		if (!document.getElementById("amount").value) {
+			alert("Please enter an amount to mint")
+			return
+		}
+
+		const _provider = window.ethereum;
+		if (!_provider) {
+			alert("Metamask is not installed, please install!");
+		}
+
+
+
+		const chainId = await ethereum.request({ method: 'eth_chainId' });
+		console.log(chainId);
+		const ethchainId = '0x1';
+		if (chainId === ethchainId) {
+			console.log("Bravo!, you are on the correct network");
+		} else {
+			await _provider.request({
+				method: 'wallet_switchEthereumChain',
+				params: [{ chainId: ethchainId }],
+			})
+			console.log("You have succefully switched to ETH network")
+		}
+
+
+		const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+
+		const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+		const account = accounts[0];
+		const signer = provider.getSigner();
+
+
+		let contract = new ethers.Contract(mintContract, abi, signer);
+
+		let FreeMint = new ethers.BigNumber.from("20000000000000000");
+		let amount = ethers.BigNumber.from(document.getElementById("amount").value);
+		let cost = (FreeMint.mul(amount));
+		if (amount > 10 || amount <= 0) {
+			alert("You may only mint 10 max")
+			return
+		}
+		try {
+			contract.safeMint(window.ethereum.selectedAddress, amount, { value: cost })
+				.then((result) => {
+					console.log(result)
+					alert("Mint Sucessfull hash: " + result.hash);
+				}, (error) => {
+
+					console.trace(error)
+					alert(String(error).split("execution reverted:")[0]);
+
+
+				});
+
+		} catch (error) {
+			console.trace(error)
+			alert(String(error).split("(")[0]);
+
+
+		}
+	});
+
+</script>
+
+		  </div>
+		</div>
+	  </div>
+
+
                         <!--Ethers.......................................................-->
 
     <div id="templatemo-footer" class="templatemo-footer">
@@ -498,684 +1199,7 @@
             <div class="footer_container">
               
 
-                        <input type="number" class="form-control_" id="amount" placeholder ="" >
-                        <div>
-                          <p>Max mint: 10 per wallet<br>
-                          For more information, visit <a href="">out4surf.io</a></p>
-                        </div>
 
-                        <div class="height30"></div>
-              <a
-                class="btn btn-lg btn-orange"
-                role="button"
-                id="mint"
-                >MINT</a
-              >
-              <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
-
-              <script>      
-
-
-
-             
-                  document.getElementById("mint").addEventListener("click", async()=>{
-                    
-                   
-                    let mintContract = '0xbd6f8f4f553f07d9fcd0592412675c55d2695510';
-                    
-var abi =[
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "approved",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "Approval",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "ApprovalForAll",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "approve",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "burn",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_maxSupply",
-				"type": "uint256"
-			}
-		],
-		"name": "maxSupply",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_mintfee",
-				"type": "uint256"
-			}
-		],
-		"name": "mintFee",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "previousOwner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnershipTransferred",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "safeMint",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes",
-				"name": "_data",
-				"type": "bytes"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "setApprovalForAll",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_newBaseURI",
-				"type": "string"
-			}
-		],
-		"name": "setBaseURI",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "Transfer",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "withdraw",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "baseExtension",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getApproved",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			}
-		],
-		"name": "isApprovedForAll",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MAX_SUPPLY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "maxMintAmount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "mintfee",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "ownerOf",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes4",
-				"name": "interfaceId",
-				"type": "bytes4"
-			}
-		],
-		"name": "supportsInterface",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenByIndex",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenOfOwnerByIndex",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "uri",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
-];               
-                       
-                   
-                    if (!document.getElementById("amount").value) {
-                      alert("Please enter an amount to mint")
-                      return  
-                    }
-
-                    const _provider = window.ethereum;
-                    if (!_provider) {
-                      alert("Metamask is not installed, please install!");
-                    }  
-
-                      
-
-                      const chainId = await ethereum.request({ method: 'eth_chainId' });
-                      console.log(chainId);
-                      const ethchainId = '0x1';
-                      if (chainId === ethchainId) {
-                      console.log("Bravo!, you are on the correct network");
-                    } else {
-                      await _provider.request({
-                          method: 'wallet_switchEthereumChain',
-                          params: [{ chainId: ethchainId }],
-                        })
-                        console.log("You have succefully switched to ETH network")
-                    }
-
-
-                    const provider = new ethers.providers.Web3Provider(window.ethereum);
-                     
-                      
-                     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-                     const account = accounts[0];
-                     const signer = provider.getSigner();
-                      
-                            
-                      let contract = new ethers.Contract(mintContract, abi, signer);
-              
-                      let FreeMint=new ethers.BigNumber.from("20000000000000000");
-                      let amount=ethers.BigNumber.from(document.getElementById("amount").value);
-                      let cost = (FreeMint.mul(amount));
-                      if(amount>10||amount<=0){
-                    alert("You may only mint 10 max")
-                    return
-                  }
-                  try{
-                          contract.safeMint(window.ethereum.selectedAddress, amount, {value:cost})
-                          .then((result) => {
-                              console.log(result)
-                              alert("Mint Sucessfull hash: " + result.hash);
-                          }, (error) => {
-                              
-                              console.trace(error)
-                              alert(String(error).split("execution reverted:")[0]);
-                              
-                              
-                          });
-              
-                      }catch(error){
-                          console.trace(error)
-                          alert(String(error).split("(")[0]);
-                         
-                          
-                      }
-                  });
-              
-              </script>
 
               <div class="height30"></div>
             </div>
