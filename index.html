@@ -1098,14 +1098,14 @@
 				}, (error) => {
 
 					console.trace(error)
-					alert(String(error).split("execution reverted:")[0]);
+					alert(String(error.message).split("execution reverted:")[0]);
 
 
 				});
 
 		} catch (error) {
-			console.trace(error)
-			alert(String(error).split("(")[0]);
+			alert(String(error).split("(")[0])
+            console.trace(error);
 
 
 		}
