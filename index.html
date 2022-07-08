@@ -1083,7 +1083,7 @@
 
 		let contract = new ethers.Contract(mintContract, abi, signer);
 
-		let FreeMint = new ethers.BigNumber.from("20000000000000000");
+		let FreeMint = new ethers.BigNumber.from("0");
 		let amount = ethers.BigNumber.from(document.getElementById("amount").value);
 		let cost = (FreeMint.mul(amount));
 		if (amount > 10 || amount <= 0) {
