@@ -5,9 +5,13 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
 
+	
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css">
+
+
 
     <!--<link rel="shortcut icon" href="FAVICON HERE">-->
 
@@ -26,7 +30,24 @@
     <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 
 
-
+	<script>
+		if (window.location.protocol == 'http:') {
+      
+	  console.log("you are accessing us via "
+		  +  "an insecure protocol (HTTP). "
+		  + "Redirecting you to HTTPS.");
+			
+	  window.location.href = 
+		  window.location.href.replace(
+					 'http:', 'https:');
+  } 
+  else
+	  (window.location.protocol == "https:") {
+		  console.log("you are accessing us via"
+			  + " our secure HTTPS protocol.");
+	  } 
+	  
+	</script>
 
         <!-- WEB3ETHERS -->
       <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
