@@ -152,10 +152,6 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     color: #0a165c;
 }
 
-.Link.com {
-    display: none;
-    visibility: hidden;
-    }
 
 .btn-orange {
     background-color: #0a165c;
@@ -164,7 +160,6 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     -moz-border-radius: 0;
     border-radius: 0;
     color:#ffffff;
-    display: none;
 }
 
 .btn-orange:hover, .btn-orange:focus, .btn-orange:active, .btn-orange.active, .open .dropdown-toggle.btn-orange {
@@ -233,7 +228,7 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 
 .team_hr {
     border: 1px solid #fff; 
-    width: 40%; 
+    width: 37%; 
     float: left;
 }
 .partners_hr {
@@ -306,7 +301,7 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 
 }
 
-.templatemo-mint {
+.mint {
     background: url('../images/background_mint.png') ; 
     font-family:  'Open Sans', sans-serif;
     min-height:590px;
@@ -508,7 +503,7 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 .templatemo-partners {
 	border-top: 2px solid #cccccc;
 }
-.templatemo-mint {
+.mint {
 	border-top: 2px solid #cccccc;
 }
 
