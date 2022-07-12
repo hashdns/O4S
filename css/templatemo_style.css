@@ -147,10 +147,11 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 .subheader {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
-    margin-top: 12px;
-    font-size: 12px;
+    margin-top: 4px;
+    font-size: 10px;
     color: #0a165c;
     text-align: end;
+    margin-bottom: 4px;
 }
 
 
