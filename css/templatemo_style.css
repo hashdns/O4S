@@ -295,6 +295,7 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     font-family:  'Open Sans', sans-serif;
     min-height:590px;
     color:#ffffff;
+    border-top: 10px solid #cccccc;
 
 }
 .templatemo-portfolio {
@@ -302,6 +303,7 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     font-family:  'Open Sans', sans-serif;
     min-height:590px;
     color:#ffffff;
+    border-top: 10px solid #cccccc;
 
 }
 
@@ -310,6 +312,7 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     font-family:  'Open Sans', sans-serif;
     min-height:590px;
     color:#ffffff;
+    border-top: 10px solid #cccccc;
 
 }
 .templatemo-line-header {
@@ -468,7 +471,8 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 }
 
 #templatemo-contact {
-	margin-top:100px; 
+    background: url('../images/background.png');
+	min-height: 295px;
 	border-top: 10px solid #cccccc; 
 	font-size:15px;
     color: #070707;
@@ -499,16 +503,17 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 }
 
 .twitter_user {
-	color: #3358ff; 
+	color: #a3b4ff; 
 	font-size: 14px;
 	float: right;
 }
 
 .templatemo-partners {
-	border-top: 2px solid #cccccc;
+    border-top: 10px solid #cccccc; 
+	
 }
 ._mint {
-	border-top: 2px solid #cccccc;
+	border-top: 10px solid #cccccc; 
 }
 
 
@@ -588,7 +593,8 @@ ul.templatemo-project-gallery  li  a img:hover {
     font-family:  'Open Sans', sans-serif;
     font-size:20px;
     color:#ffffff;
-    margin-top:100px;
+    border-top-color:#3b92b4 ;
+    
 }
 
 .form-control {
