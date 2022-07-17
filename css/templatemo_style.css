@@ -734,7 +734,11 @@ ul.templatemo-project-gallery  li  a img:hover {
 }
 
 @media (min-width:991px) and (max-width: 1200px) {
-	 .team_hr {
+	 
+    .subheader{
+        width: 37%;
+    }
+    .team_hr {
 		width: 37%; 
 	}
     .portfolio_hr {
@@ -748,7 +752,11 @@ ul.templatemo-project-gallery  li  a img:hover {
         }
 }
 @media (min-width:683px) and ( max-width: 991px) {
-	 .team_hr {
+	
+    .subheader{
+        width: 33%;
+    }
+    .team_hr {
 		width: 33%;
 	}
     .portfolio_hr {
@@ -767,6 +775,10 @@ ul.templatemo-project-gallery  li  a img:hover {
             padding-left: 25%;
 
         }
+
+        .subheader{
+            width: 30%;
+        }       
 	 .team_hr {
 		width: 30%;
 	}
@@ -782,6 +794,11 @@ ul.templatemo-project-gallery  li  a img:hover {
 }
 
 @media (min-width:536px) and ( max-width: 585px) {
+
+
+    .subheader{
+        width: 28%;
+    }
 	 .team_hr {
 		width: 28%;
 	}
@@ -797,6 +814,10 @@ ul.templatemo-project-gallery  li  a img:hover {
 }
 
 @media  (min-width:410px) and  ( max-width: 536px) {
+
+    .subheader{
+        width: 21%;
+    }
 	 .team_hr {
 		width: 21%;
 	}
@@ -812,6 +833,9 @@ ul.templatemo-project-gallery  li  a img:hover {
 }
 
 @media  ( max-width: 410px) {
+    .subheader{
+        width: 11%;
+    }
 	 .team_hr {
 		width: 11%;
 	}
